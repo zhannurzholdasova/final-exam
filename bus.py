@@ -41,6 +41,18 @@ def search():
 
     else:
         begin()
+def stopbus():
+    b2.grid_forget()
+    la3.grid(row=3, column=0, pady=10)
+    l2.grid(row=4, column=0, padx=155)
+    i = l1.curselection()[0]
+    print(stop_bus[i])
+    for x, y in enumerate(stop):
+        if y == stop_bus[i]:
+            bus2.append(bus[x])
+
+            var2 = StringVar(value=bus2)
+            l2.config(listvariable=var2)
 la1 = Label(win, text='CHOOSE BUS NUMBER', bg='moccasin', font='ArialBlack')
 l1 = Listbox(win, listvariable='', width=30, height=5)
 l2 = Listbox(win, listvariable='', width=30, height=5)
