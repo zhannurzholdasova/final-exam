@@ -25,7 +25,32 @@ def begin():
     la1.grid(row=0, column=0,pady=50)
     e1.grid(row=1, column=0, padx=155, pady=10)
     b1.grid(row=2, column=0)
+def search():
+    if e1.get() in bus:
+        e1.grid_forget()
+        b1.grid_forget()
+        la1.grid_forget()
+        la2.grid(row=0, column=0, pady=10)
+        l1.grid(row=1, column=0, padx=155, pady=10)
+        b2.grid(row=2, column=0)
+        for i, y in enumerate(bus):
+            if e1.get() == y:
+                stop_bus.append(stop[i])
+                var2 = StringVar(value=stop_bus)
+                l1.config(listvariable=var2)
+
+    else:
+        begin()
 la1 = Label(win, text='CHOOSE BUS NUMBER', bg='moccasin', font='ArialBlack')
+l1 = Listbox(win, listvariable='', width=30, height=5)
+l2 = Listbox(win, listvariable='', width=30, height=5)
+
+b1 = Button(win, text='SEARCH', bg='white', command=search
+b2 = Button(win, text='SEARCH', bg='white', command=stopbus)
+
+la1 = Label(win, text='CHOOSE BUS NUMBER', bg='moccasin', font='ArialBlack')
+la2 = Label(win, text='BUS STOPS', bg='moccasin', font='ArialBlack')
+la3 = Label(win, text='OTHER BUSES THAT GO THERE', bg='moccasin', font='ArialBlack')
 e1 = Entry(win, width=30)
 b1 = Button(win, text='SEARCH', bg='white', command=search)
 begin()
