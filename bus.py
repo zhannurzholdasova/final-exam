@@ -25,3 +25,9 @@ def begin():
     la1.grid(row=0, column=0,pady=50)
     e1.grid(row=1, column=0, padx=155, pady=10)
     b1.grid(row=2, column=0)
+la1 = Label(win, text='CHOOSE BUS NUMBER', bg='moccasin', font='ArialBlack')
+e1 = Entry(win, width=30)
+b1 = Button(win, text='SEARCH', bg='white', command=search)
+begin()
+win.mainloop()
+   
